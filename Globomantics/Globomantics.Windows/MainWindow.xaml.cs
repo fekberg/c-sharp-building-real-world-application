@@ -25,7 +25,12 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
 
+        this.mainViewModel = mainViewModel;
+        this.todoViewModelFactory = todoViewModelFactory;
+
         DataContext = mainViewModel;
+
+        TodoType.ItemsSource = TodoViewModelFactory.TodoTypes;
 
         mainViewModel.ShowSaveFileDialog = () => OpenCreateFileDialog();
         mainViewModel.ShowOpenFileDialog = () => OpenFileDialog(".json", "JSON (.json)|*.json", true);
@@ -35,11 +40,6 @@ public partial class MainWindow : Window
         mainViewModel.ShowAlert = (message) => {
             MessageBox.Show(message);
         };
-
-        this.mainViewModel = mainViewModel;
-        this.todoViewModelFactory = todoViewModelFactory;
-
-        TodoType.ItemsSource = TodoViewModelFactory.TodoTypes;
 
         WeakReferenceMessenger.Default.Register<TodoSavedMessage>(this, (sender, message) => {
             CreateTodoControlContainer.Children.Clear();
