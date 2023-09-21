@@ -3,7 +3,7 @@
 public abstract record Todo(Guid Id,
     string Title,
     DateTimeOffset CreatedDate,
-    User CretedBy,
+    User CreatedBy,
     bool IsCompleted = false,
     bool IsDeleted = false)
 {
