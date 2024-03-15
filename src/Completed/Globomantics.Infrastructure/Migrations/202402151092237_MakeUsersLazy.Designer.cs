@@ -11,14 +11,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Globomantics.Infrastructure.Migrations
 {
     [DbContext(typeof(GlobomanticsDbContext))]
-    [Migration("20230615092237_MakeUsersLazy")]
+    [Migration("202402151092237_MakeUsersLazy")]
     partial class MakeUsersLazy
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.7");
+            modelBuilder.HasAnnotation("ProductVersion", "8.0.3");
 
             modelBuilder.Entity("Globomantics.Infrastructure.Data.Models.Image", b =>
                 {

@@ -71,7 +71,7 @@ public partial class App : Application
             App.CurrentUser = DataToDomainMapping.MapUser(user);
         }
         catch (Exception ex)
-        { 
+        {  
             // TODO: Add Logging
         }
 
